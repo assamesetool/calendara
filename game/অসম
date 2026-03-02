@@ -1,0 +1,35 @@
+[
+  {
+    "word": "অসম",
+    "phonetics": [{
+        "text": "/həˈloʊ/",
+        "audio": ""}],
+    "meanings": [
+       {
+        "partOfSpeech": "বিশেষ্য",
+        "definitions": [{
+            "definition": "ভাৰতৰ এখন ৰাজ্য",
+            "synonyms": [],
+            "antonyms": []}],
+        "synonyms": [
+          "greeting"],
+        "antonyms": []},
+      {
+        "partOfSpeech": "ক্ৰিয়া",
+        "definitions": [{
+            "definition": "সমান নহয়, অসমান",
+            "synonyms": [],
+            "antonyms": []}],
+        "synonyms": [],
+        "antonyms": []},
+      {
+        "partOfSpeech": "interjection",
+        "definitions": [{
+            "definition": "",
+            "synonyms": [],
+            "antonyms": [],
+            "example": ""}],
+        "synonyms": [],
+        "antonyms": []}],
+  }
+]
