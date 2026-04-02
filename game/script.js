@@ -1,0 +1,28 @@
+// script.js
+async function fetchArticles() {
+  const url = 'https:                                                                                                                                                                                                                                
+  try {
+    const response = await fetch(url);
+    const html = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, '//as.wikipedia.org/w/index.php?limit=500&offset=&title=%E0%A6%AC%E0%A6%BF%E0%A6%B6%E0%A7%87%E0%A6%B7:%E0%A6%AA%E0%A7%B0%E0%A7%B1%E0%A7%B0%E0%A7%8D%E0%A6%A4%E0%A7%80_%E0%A6%AA%E0%A7%B2%8D%E0%A6%B7%E0%A7%8D%E0%A6%A0%E0%A6%BE';
+  try {
+    const response = await fetch(url);
+    const html = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    const articles = [];
+    const links = doc.querySelectorAll('a');
+    links.forEach(link => {
+      if (link.title && link.title.includes('পৃষ্ঠা')) {
+        articles.push(link.title);
+      }
+    });
+    console.log(articles);
+    document.getElementById('output').innerText = articles.join('\n');
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+fetchArticles();
