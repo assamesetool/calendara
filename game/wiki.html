@@ -4,16 +4,14 @@
   <title>Recent Changes</title>
 </head>
 <body>
-  <a>Start Month: </a><input type="date" id="startMonth">
   <a>Start Date: </a><input type="date" id="startDate">
-  <a>End Month: </a><input type="date" id="endMonth">
   <a>End Date: </a><input type="date" id="endDate">
   <button onclick="fetchRecentChanges()">Fetch Recent Changes</button>
   <div id="output"></div>
-
+  <script>
   function fetchRecentChanges() {
-  const start = '2026-' + new Date(document.getElementById('startMonth').value + '-' + new Date(document.getElementById('startDate').value + 'T23:59:59Z').toISOString();
-  const end = '2026-' + new Date(document.getElementById('endMonth').value + '-' + new Date(document.getElementById('endDate').value + 'T23:59:59Z').toISOString();
+  const start = new Date(document.getElementById('startDate').value + 'T23:59:59Z').toISOString();
+  const end = new Date(document.getElementById('endDate').value + 'T23:59:59Z').toISOString();
   const apiUrl = `https:                                                                                                                                                     
 
   console.log(apiUrl);                               
@@ -43,5 +41,6 @@
     })
     .catch(error => console.error('Error:', error));
 }
+    </script>
 </body>
 </html>
