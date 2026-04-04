@@ -4,14 +4,14 @@
   <title>Recent Changes</title>
 </head>
 <body>
-  <button onclick="fetchRecentChanges()">Fetch new Changes</button>
+  <button onclick="fetchRecentChanges()">Fetch news Changes</button>
   <div id="output"></div>
 
   <script>
     function fetchRecentChanges() {
       const start = '2026-03-01T23:59:59Z';
       const end = '2026-03-30T23:59:59Z';
-      const apiUrl = `https:                                                                                                                                                     
+      const apiUrl = `https://as.wikipedia.org/w/api.php?action=query&list=recentchanges&rctype=new&rcnamespace=0&rcend=2026-03-27T23:59:59Z&rcstart=2026-03-29T00:00:00Z&rclimit=500&format=json&origin=*`                                                                                                                                                   
 
       fetch(apiUrl)
         .then(response => response.json())
