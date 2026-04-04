@@ -7,40 +7,30 @@
   <a>Start Date: </a><input type='date' id="startDate">
   <a>End Date: </a><input type='date' id="endDate">
   <button onclick="fetchRecentChanges()">Fetch Recent Changes</button>
+  <div id="apiUrl"></div>
   <div id="output"></div>
   <script>
+
   function fetchRecentChanges() {
-  const start = new Date(document.getElementById('startDate').value + 'T23:59:59Z').toISOString();
-  const end = new Date(document.getElementById('endDate').value + 'T23:59:59Z').toISOString();
-  const apiUrl = `https:                                                                                                                                                     
+    const start = new Date(document.getElementById('startDate').value + 'T00:00:00Z').toISOString();
+    const end = new Date(document.getElementById('endDate').value + 'T23:59:59Z').toISOString();
+    const apiUrl = `https://as.wikipedia.org/w/api.php?action=query&list=recentchanges&rctype=new&rcnamespace=0&rclimit=10&rcstart=${start}&rcend=${end}&format=json&origin=*`                                                                                                                                                     
 
-  console.log(apiUrl);                               
+    document.getElementById('apiUrl').innerHTML = `<p>API URL: <a href="${apiUrl}">${apiUrl}</a></p>`;
 
-  fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-      const recentChanges = data.query.recentchanges;
-      const output = document.getElementById('output');
-      output.innerHTML = '';
-      recentChanges.forEach(change => {
-        const title = change.title;
-        output.innerHTML += `//as.wikipedia.org/w/api.php?action=query&list=recentchanges&rctype=new&rcnamespace=0&rclimit=10&rcstart=${start}&rcend=${end}&format=json&origin=*`;
-
-  console.log(apiUrl); // logs the URL to the console
-
-  fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-      const recentChanges = data.query.recentchanges;
-      const output = document.getElementById('output');
-      output.innerHTML = '';
-      recentChanges.forEach(change => {
-        const title = change.title;
-        output.innerHTML += `<p><a href="https://as.wikipedia.org/wiki/${title}">${title}</a></p>`;
-      });
-    })
-    .catch(error => console.error('Error:', error));
-}
-    </script>
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        const recentChanges = data.query.recentchanges;
+        const output = document.getElementById('output');
+        output.innerHTML = '';
+        recentChanges.forEach(change => {
+          const title = change.title;
+          output.innerHTML += `<p><a href="https://as.wikipedia.org/wiki/${title}">${title}</a></p>`;
+        });
+      })
+      .catch(error => console.error('Error:', error));
+  }
+</script>
 </body>
 </html>
