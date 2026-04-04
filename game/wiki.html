@@ -4,15 +4,15 @@
   <title>Recent Changes</title>
 </head>
 <body>
-  <a>Start Date: </a><input id="startDate">
-  <a>End Date: </a><input id="endDate">
+  <a>Start Date: </a><input type='date' id="startDate">
+  <a>End Date: </a><input type='date' id="endDate">
   <button onclick="fetchRecentChanges()">Fetch Recent Changes</button>
   <div id="output"></div>
   <script>
   function fetchRecentChanges() {
   const start = new Date(document.getElementById('startDate').value + 'T23:59:59Z').toISOString();
   const end = new Date(document.getElementById('endDate').value + 'T23:59:59Z').toISOString();
-  const apiUrl = `https://as.wikipedia.org/w/api.php?action=query&list=recentchanges&rctype=new&rcnamespace=0&rclimit=10&rcstart=` + Date(document.getElementById('startDate').value + 'T23:59:59Z').toISOString() + `&rcend=` + Date(document.getElementById('endDate').value + 'T23:59:59Z').toISOString() + `&format=json&origin=*`                                                                                                                                                     
+  const apiUrl = `https:                                                                                                                                                     
 
   console.log(apiUrl);                               
 
