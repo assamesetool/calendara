@@ -12,8 +12,8 @@
   <script>
 
   function fetchRecentChanges() {
-    const start = new Date(document.getElementById('startDate').value + 'T23:59:59Z').toISOString();
-    const end = new Date(document.getElementById('endDate').value + 'T00:00:00Z').toISOString();
+    const start = new Date(document.getElementById('startDate').value + 'T05:29:59Z').toISOString();
+    const end = new Date(document.getElementById('endDate').value + 'T18:29:00Z').toISOString();
     const apiUrl = `https://as.wikipedia.org/w/api.php?action=query&list=recentchanges&rctype=new&rcnamespace=0&rclimit=500&rcstart=${start}&rcend=${end}&format=json&origin=*`                                                                                                                                                     
 
     
